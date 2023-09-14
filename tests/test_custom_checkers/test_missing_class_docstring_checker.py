@@ -1,5 +1,6 @@
 import astroid
 import pylint.testutils
+import pytest
 from astroid import nodes
 
 # import our custom checker

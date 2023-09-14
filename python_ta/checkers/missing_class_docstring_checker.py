@@ -16,7 +16,7 @@ class MissingClassDocstringChecker(BaseChecker):
     """
 
     # Using name to generate a special configuration section for the checker.
-    name = "missing_docstring_class"
+    name = "missing_class_docstring"
 
     # Problems being displayed to the user through these messages
     msgs = {
