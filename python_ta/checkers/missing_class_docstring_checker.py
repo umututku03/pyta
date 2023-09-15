@@ -15,9 +15,9 @@ class MissingClassDocstringChecker(BaseChecker):
 
     # Problems being displayed to the user through these messages
     msgs = {
-        "CO115": (  # the message id
+        "W0000": (  # the message id
             "Missing docstring for the class",  # template of the displayed message
-            "missing-class-docstring",  # message symbol
+            "new-missing-class-docstring",  # message symbol
             "Used when a given class does not have a docstring.",
         )
     }
@@ -25,13 +25,13 @@ class MissingClassDocstringChecker(BaseChecker):
     # An optional argument for making sure that this checker is executed before others
     priority = -1
 
-    @only_required_for_messages("missing-class-docstring")
+    @only_required_for_messages("new-missing-class-docstring")
     def visit_classdef(self, node: nodes.ClassDef):
         """
         Visit a class definition.
         """
         if node.doc_node is None:
-            self.add_message("missing-class-docstring", node=node, args=node.name)
+            self.add_message("new-missing-class-docstring", node=node, args=node.name)
 
 
 def register(linter: "PyLinter") -> None:

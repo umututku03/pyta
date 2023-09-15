@@ -35,7 +35,7 @@ class TestMissingClassDocstringChecker(pylint.testutils.CheckerTestCase):
 
         with self.assertAddsMessages(
             pylint.testutils.MessageTest(
-                msg_id="missing-class-docstring", node=class_node, args=class_node.name
+                msg_id="new-missing-class-docstring", node=class_node, args=class_node.name
             ),
             ignore_position=True,
         ):
