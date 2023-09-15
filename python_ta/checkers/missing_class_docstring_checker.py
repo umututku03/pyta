@@ -31,7 +31,8 @@ class MissingClassDocstringChecker(BaseChecker):
         Visit a class definition.
         """
         if node.doc_node is None:
-            self.add_message("new-missing-class-docstring", node=node, args=node.name)
+            self.add_message("new-missing-class-docstring", node=node)
+            # The old one was self.add_message("new-missing-class_docstring", node=node, args=node.args)
 
 
 def register(linter: "PyLinter") -> None:
