@@ -5,11 +5,6 @@ from pylint.checkers.utils import only_required_for_messages
 from pylint.lint import PyLinter
 
 
-def register(linter: "PyLinter") -> None:
-    """required method to auto register this checker"""
-    linter.register_checker(MissingClassDocstringChecker(linter))
-
-
 class MissingClassDocstringChecker(BaseChecker):
     """
     Checker for missing docstrings in classes (even empty classes should have docstrings).
@@ -37,3 +32,8 @@ class MissingClassDocstringChecker(BaseChecker):
         """
         if node.doc_node is None:
             self.add_message("missing-class-docstring", node=node, args=node.name)
+
+
+def register(linter: "PyLinter") -> None:
+    """required method to auto register this checker"""
+    linter.register_checker(MissingClassDocstringChecker(linter))
