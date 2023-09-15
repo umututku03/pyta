@@ -15,9 +15,9 @@ class MissingClassDocstringChecker(BaseChecker):
 
     # Problems being displayed to the user through these messages
     msgs = {
-        "W0000": (  # the message id
+        "CO115": (  # the message id
             "Missing docstring for the class",  # template of the displayed message
-            "missing-class-docstring"  # message symbol
+            "missing-class-docstring",  # message symbol
             "Used when a given class does not have a docstring.",
         )
     }
