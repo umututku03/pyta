@@ -34,9 +34,7 @@ class TestMissingClassDocstringChecker(pylint.testutils.CheckerTestCase):
         )  # obtain the class Node from the given AST
 
         with self.assertAddsMessages(
-            pylint.testutils.MessageTest(
-                msg_id="new-missing-class-docstring", node=class_node, args=class_node.name
-            ),
+            pylint.testutils.MessageTest(msg_id="new-missing-class-docstring", node=class_node),
             ignore_position=True,
         ):
             self.checker.visit_classdef(class_node)
