@@ -19,8 +19,6 @@ __version__ = "2.6.2.dev"  # Version number
 # First, remove underscore from builtins if it has been bound in the REPL.
 import builtins
 
-from pylint.config.config_file_parser import _ConfigurationFileParser
-from pylint.config.exceptions import _UnrecognizedOptionError
 from pylint.lint import PyLinter
 
 from python_ta.config import (
@@ -42,17 +40,13 @@ import os
 import sys
 import tokenize
 import webbrowser
-from builtins import FileNotFoundError
 from os import listdir
-from pathlib import Path
 from typing import AnyStr, Generator, List, Optional, TextIO, Union
 
 import pylint.config
 import pylint.lint
 import pylint.utils
-import toml
 from astroid import MANAGER, modutils
-from pylint.config.config_initialization import _config_initialization
 from pylint.utils.pragma_parser import OPTION_PO
 
 from .patches import patch_all
